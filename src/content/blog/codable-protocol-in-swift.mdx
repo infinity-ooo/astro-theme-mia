@@ -1,23 +1,23 @@
 ---
 title: "Codable Protocol in Swift"
 description: "Codable protocol allows you to encode or decode custom data types to and from formats such as JSON"
-date: "2022-12-29"
+date: "2024-05-01"
 tags: ["swift", "codable"]
 cover: "https://images.unsplash.com/photo-1579762593175-20226054cad0"
 ---
 
-In Swift, the `Codable` protocol is a type alias for the `Encodable` and `Decodable` protocols:
+In Swift, the `Codable` protocol is a type alias for the <Notation type="box" color="blue">`Encodable` and `Decodable`</Notation> protocols:
 
 ```swift
 // Declaration
 typealias Codable = Decodable & Encodable
 ```
 
-The `Codable` protocol allows developers to encode or decode instances of a type to and from variety formats, such as a JSON or property lists.
+The `Codable` protocol <Notation type="underline" color="red">allows developers to encode or decode instances of a type to and from variety formats</Notation>, such as a JSON or property lists.
 
 ## Basic Usage
 
-To use the `Codable` protocol, you need to define the types that you want to encode or decode, and make them conform the `Codable` protocol:
+To use the `Codable` protocol, <Notation type="highlight" color="yellow">you need to define the types that you want to encode or decode</Notation>, and make them conform the `Codable` protocol:
 
 ```swift
 struct User: Codable {
