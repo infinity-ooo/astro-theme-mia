@@ -1,12 +1,12 @@
 {
   "name": "astro-theme-mia",
-  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && tsc --noEmit && astro build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write --plugin-search-dir=. ."
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
