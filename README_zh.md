@@ -4,7 +4,7 @@
 
 Mia 旨在简约而强大，集成了 Astro、MDX 和 Rough Notation 的功能。无论你是开发者、作家，还是仅仅喜欢简洁高效的设计，这个主题都非常适合你。
 
-![Mia Theme Preview](public/mia-preview.jpeg)
+![Mia Theme Preview](public/theme-preview.png)
 
 ## 开始使用
 

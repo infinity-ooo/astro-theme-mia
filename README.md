@@ -4,7 +4,7 @@
 
 Mia is designed to be minimalist yet powerful, integrating the capabilities of Astro, MDX, and Rough Notation. Whether you're a developer, writer, or just someone who loves clean and efficient design, this theme is perfect for you.
 
-![Mia Theme Preview](public/mia-preview.jpeg)
+![Mia Theme Preview](public/theme-preview.png)
 
 ## Get Started
 
