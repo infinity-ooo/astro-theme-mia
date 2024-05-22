@@ -1,0 +1,18 @@
+---
+type Props = {
+  type?: "underline" | "circle" | "crossed-off" | "highlight" | "strike-through" | "bracket";
+  color?: string;
+  strokeWidth?: number;
+};
+
+const { type = "underline", color = "red", strokeWidth = 1.5 } = Astro.props;
+---
+
+<span
+  data-notion-identity="notion"
+  data-notion-type={type}
+  data-notion-color={color}
+  data-notion-strokewidth={strokeWidth}
+>
+  <slot />
+</span>

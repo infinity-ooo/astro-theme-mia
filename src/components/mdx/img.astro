@@ -1,0 +1,12 @@
+---
+const props = Astro.props;
+---
+
+<div {...props} class="flex flex-col gap-2 text-center">
+  <img
+    class="w-full rounded-lg overflow-clip"
+    src={props.src ? `${props.src}?w=1024&q=70` : ""}
+    alt={props.alt ?? ""}
+  />
+  <span class="text-gray-400 font-normal text-sm">{props.alt}</span>
+</div>

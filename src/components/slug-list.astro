@@ -1,0 +1,28 @@
+---
+type Props = {
+  slugs: string[];
+  activeSlug?: string;
+  generateLink: (slug: string) => string;
+};
+
+const { slugs, activeSlug, generateLink } = Astro.props;
+---
+
+<div
+  class="flex flex-row flex-wrap items-center justify-center gap-2 max-w-screen-md mx-auto my-8 text-4xl text-zinc-300 font-title font-black select-none"
+>
+  {
+    slugs.map((slug, index) => (
+      <>
+        <a
+          href={generateLink(slug)}
+          target="_self"
+          class={`capitalize ${activeSlug === slug ? "text-zinc-700" : ""} hover:text-zinc-700 cursor-pointer`}
+        >
+          {slug}
+        </a>
+        <span>{index === slugs.length - 1 ? "" : " / "}</span>
+      </>
+    ))
+  }
+</div>

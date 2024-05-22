@@ -1,0 +1,28 @@
+---
+type Props = {
+  direction?: "row" | "column";
+  ratio?: string;
+  align?: "flex-start" | "center" | "flex-end";
+  justify?: "flex-start" | "center" | "flex-end";
+  gap?: string;
+  padding?: string;
+  extraClass?: string;
+};
+
+const {
+  direction = "row",
+  ratio = "1",
+  align = "center",
+  justify = "center",
+  gap = "8px",
+  padding = "0",
+  extraClass = "",
+} = Astro.props;
+---
+
+<div
+  class={`flex size-full text-xl ${extraClass}`}
+  style={`flex: ${ratio}; flex-direction: ${direction}; align-items: ${align}; justify-content: ${justify}; gap:${gap}; padding: ${padding};`}
+>
+  <slot />
+</div>

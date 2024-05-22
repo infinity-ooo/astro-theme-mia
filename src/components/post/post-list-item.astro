@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+import DateTag from "../date-tag.astro";
+import Tag from "../tag.astro";
+
+type Props = {
+  post: CollectionEntry<"blog">;
+};
+
+const { post } = Astro.props;
+---
+
+<div class="flex flex-col gap-4">
+  {
+    post.slug && (
+      <a href={`/posts/${post.slug}`} target="_self">
+        <img
+          src={post.data.cover ? `${post.data.cover}?w=800&q=80` : ""}
+          alt="cover"
+          class="w-full aspect-video rounded self-auto object-cover"
+        />
+      </a>
+    )
+  }
+  <div class="flex flex-col gap-2">
+    <div class="flex gap-2">
+      <DateTag date={post.data.date} />
+      {post.data.tags?.map((tag) => <Tag tag={tag} />)}
+    </div>
+    <a href={`/posts/${post.slug}`} target="_self">
+      <h1 class="text-3xl font-title font-black">{post.data.title}</h1>
+    </a>
+    <a href={`/posts/${post.slug}`} target="_self">
+      <p class="text-sm text-zinc-700">{post.data.description}</p>
+    </a>
+  </div>
+</div>

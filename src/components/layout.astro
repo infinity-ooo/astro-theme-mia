@@ -1,0 +1,29 @@
+---
+import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
+import Footer from "./footer.astro";
+import Header from "./header.astro";
+import Meta from "./meta.astro";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="text-zinc-800">
+  <head>
+    <Meta title={title ? `${title} · ${SITE_TITLE}` : SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <div class="flex flex-col h-full mb-8 overflow-y-scroll antialiased">
+      <Header />
+      <div class="flex-auto">
+        <slot />
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>

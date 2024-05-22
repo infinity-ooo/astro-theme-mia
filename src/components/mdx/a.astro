@@ -1,0 +1,7 @@
+---
+const props = Astro.props;
+---
+
+<a {...props} href={props.href} class="text-blue-600 after:content-['_↗']" target="_blank" rel="noopener noreferrer">
+  <slot />
+</a>

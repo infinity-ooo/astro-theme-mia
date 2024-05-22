@@ -1,0 +1,44 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../components/layout.astro";
+import PostListing from "../../components/post/post-list.astro";
+import SlugList from "../../components/slug-list.astro";
+
+type Post = CollectionEntry<"blog">;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tagSet = new Set<string>();
+  const tagMap = posts.reduce(
+    (map, post) => {
+      const tags = post.data.tags;
+      if (tags?.length) {
+        tags.forEach((tag) => {
+          tagSet.add(tag);
+          map[tag] = (map[tag] || []).concat(post);
+        });
+      }
+      return map;
+    },
+    {} as Record<string, Post[]>,
+  );
+  const tags = Array.from(tagSet).sort();
+  return Object.entries(tagMap).map(([tag, posts]) => ({
+    params: { slug: decodeURI(tag) },
+    props: { slug: tag, posts, tags },
+  }));
+}
+
+type Props = {
+  slug: string;
+  posts: Post[];
+  tags: string[];
+};
+
+const { slug, posts, tags } = Astro.props;
+---
+
+<Layout>
+  <SlugList slugs={tags} activeSlug={slug} generateLink={(slug) => `/tags/${encodeURI(slug)}`} />
+  <PostListing posts={posts} />
+</Layout>

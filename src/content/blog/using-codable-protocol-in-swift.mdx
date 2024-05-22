@@ -1,0 +1,108 @@
+---
+title: "Using Codable Protocol in Swift"
+description: "Codable protocol allows you to encode or decode custom data types to and from formats such as JSON"
+date: "2022-12-29"
+tags: ["swift", "codable"]
+cover: "https://images.unsplash.com/photo-1579762593175-20226054cad0"
+---
+
+In Swift, the `Codable` protocol is a type alias for the `Encodable` and `Decodable` protocols:
+
+```swift
+// Declaration
+typealias Codable = Decodable & Encodable
+```
+
+The `Codable` protocol allows developers to encode or decode instances of a type to and from variety formats, such as a JSON or property lists.
+
+## Basic Usage
+
+To use the `Codable` protocol, you need to define the types that you want to encode or decode, and make them conform the `Codable` protocol:
+
+```swift
+struct User: Codable {
+    var name: String
+    var age: Int
+}
+```
+
+The above code is defining a struct called `User` which conforms to the `Codable` protocol, which means that it can be encoded or decoded into a different formats.
+
+The `User` struct has two properties:
+
+- A `name` of type `String`
+- An `age` of type `Int`
+
+```swift
+let user = User(name: "Alice", age: 8)
+
+do {
+    let encoder = JSONEncoder()
+    let encodedData = try encoder.encode(user)
+    print(String(bytes: encodedData, encoding: .utf8) ?? "")
+    // "{"name":"Alice","age":8}"
+
+    let decoder = JSONDecoder()
+    let anotherUser = try decoder.decode(User.self, from: encodedData)
+    print(anotherUser)
+    // User(name: "Alice", age: 8)
+} catch {
+    print("Error: \(error)")
+}
+```
+
+In the provided code:
+
+- A `User` instance is created
+- A `JSONEncoder` instance is created and used to encode the `user` instance into JSON data
+- A `JSONDecoder` instance is created and used to decode the JSON data back into a `User` instance
+- If any errors occur during encoding or decoding, they are caught and printed in the `catch` block
+
+> As can be seen in the above code snippet, the `encoder.encode(user)` method returns a value of type `Data` that contains the encoded representation of the `user` instance.
+> The `Data` type is used to represent a sequence of bytes. It can be used to store binary data such as image or sound files, or to encode and decode for storage or transmission.
+
+## Custom Codable Types
+
+In Swift, the following types are automatically conform to the `Codable` protocol: `String`, `Int`, `Double`, `Bool`, `URL`, `Data`, `Date`, `Array`, `Dictionary`. This means you can use these types as properties in a `Codable` struct or class without having to write any custom encoding or decoding logic.
+
+If you want to use a custom type as a property in a `Codable` struct or class, you will need to make that type conform to `Codable` as well.
+
+To add custom implementation for the `User` struct, you can define the `init(form decoder: Decoder) throws` and `encode(to encoder: Encoder) throws` functions:
+
+```swift
+struct User: Codable {
+    var name: String
+    var age: Int
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case age
+    }
+
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        age = try container.decode(Int.self, forKey: .age)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(age, forKey: .age)
+    }
+}
+```
+
+- The `CodingKeys` enum defines the keys for the **name** and **age** properties. These keys are used to map the properties to their corresponding values when coding and decoding
+- The `init(from decoder: Decoder) throws` initializer is a special initializer defined by the `Codable` protocol. It’s used to initialize a `User` instance by decoding it from a `Decoder` instance. The `Decoder` instance contains the serialized representation of the `User` instance.
+- The `func encode(to encoder: Encoder) throws` function is also defined by the Codable protocol. It’s used to encode the `User` instance to an `Encoder` instance, which will contain the serialized representation of the `User` instance
+
+## Conclusion
+
+- The `Codable` protocol allows you to encode and decode custom types to and from a serialized representation, such as JSON
+- To conform the `Codable` protocol, you can define the custom type as a property in a `Codable` struct or class
