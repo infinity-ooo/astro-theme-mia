@@ -30,7 +30,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KBLC7M4X1F"></script>
+<script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-KBLC7M4X1F"></script>
 <script>
   // @ts-ignore
   window.dataLayer = window.dataLayer || [];
