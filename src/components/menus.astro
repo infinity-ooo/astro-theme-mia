@@ -1,31 +1,10 @@
 ---
-const menus = [
-  {
-    title: "推特",
-    link: "https://x.com/_MiaYv_",
-    target: "_blank",
-  },
-  {
-    title: "小红书",
-    link: "https://www.xiaohongshu.com/user/profile/65318cc8000000002a01ba5a",
-    target: "_blank",
-  },
-  {
-    title: "掘金",
-    link: "https://juejin.cn/user/1537545434311163",
-    target: "_blank",
-  },
-  {
-    title: "知乎",
-    link: "https://www.zhihu.com/people/mia-yv",
-    target: "_blank",
-  },
-];
+import { MENUS } from "../config";
 ---
 
 <div class="flex flex-row gap-3">
   {
-    menus.map((item) => (
+    MENUS.map((item) => (
       <a href={item.link} target={item.target} class="h-full text-sm hover:text-orange-700">
         {item.title}
       </a>

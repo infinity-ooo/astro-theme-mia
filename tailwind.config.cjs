@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Noto Sans SC", "Noto Sans", "Inter"].concat(defaultTheme.fontFamily.sans),
-        title: ["Familjen Grotesk", "Noto Sans SC", "Noto Sans"].concat(defaultTheme.fontFamily.sans),
+        sans: ["Inter"].concat(defaultTheme.fontFamily.sans),
+        title: ["Noto Sans", "Noto Sans SC"].concat(defaultTheme.fontFamily.sans),
       },
     },
   },
