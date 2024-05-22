@@ -1,4 +1,4 @@
-# Mia - Astro & Tailwindcss & MDX & Rough Notation Theme
+# Mia - Astro & Tailwindcss & MDX Theme
 
 [English](README.md) | [中文](README_zh.md)
 
@@ -6,7 +6,7 @@ Mia is designed to be minimalist yet powerful, integrating the capabilities of A
 
 ![Mia Theme Preview](public/theme-preview.png)
 
-## Get Started
+#### Get Started
 
 Install the dependencies:
 
@@ -32,19 +32,19 @@ You will then see the `dist` folder generated for publishing, which you can prev
 npm run preview
 ```
 
-## Theme Configuration
+#### Theme Configuration
 
 Update the `src/config.ts` file to configure the theme:
 
-- **SITE_FAVICON**: the favicon of the site
-- **SITE_LOGO**: the logo of the site
-- **SITE_TITLE**: the title of the site
-- **SITE_DESCRIPTION**: the description of the site
-- **MENUS**: the menus of the site
-- **FOOTER_CONTENT**: the content of the footer
-- **GOOGLE_GTAG**: the Google Tag Manager ID
+- `SITE_FAVICON`: the favicon of the site
+- `SITE_LOGO`: the logo of the site
+- `SITE_TITLE`: the title of the site
+- `SITE_DESCRIPTION`: the description of the site
+- `MENUS`: the menus of the site
+- `FOOTER_CONTENT`: the content of the footer
+- `GOOGLE_GTAG`: the Google Tag Manager ID
 
-## Theme Integrations
+#### Theme Integrations
 
 - @astrojs/mdx: https://docs.astro.build/en/guides/markdown-content/
 - @astrojs/rss: https://docs.astro.build/en/guides/rss/
@@ -52,6 +52,6 @@ Update the `src/config.ts` file to configure the theme:
 - @astrojs/tailwind: https://docs.astro.build/en/guides/integrations-guide/tailwind/
 - rough-notation: https://roughnotation.com/
 
-## License
+#### License
 
 - [MIT](https://github.com/infinity-ooo/astro-theme-mia/blob/main/LICENSE)
