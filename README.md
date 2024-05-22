@@ -1,5 +1,7 @@
 # Mia - Astro & Tailwindcss & MDX & Rough Notation Theme
 
+[English](README.md) | [中文](README_zh.md)
+
 Mia is designed to be minimalist yet powerful, integrating the capabilities of Astro, MDX, and Rough Notation. Whether you're a developer, writer, or just someone who loves clean and efficient design, this theme is perfect for you.
 
 ![Mia Theme Preview](public/mia-preview.jpeg)
@@ -24,7 +26,7 @@ Build the App:
 npm run build
 ```
 
-You will then see the `dist` folder generated for publishing, which you can preview locally with the following command.
+You will then see the `dist` folder generated for publishing, which you can preview locally with the following command:
 
 ```bash
 npm run preview
@@ -52,4 +54,4 @@ Update the `src/config.ts` file to configure the theme:
 
 ## License
 
-Licensed under the [MIT](https://github.com/infinity-ooo/astro-theme-mia/blob/main/LICENSE) license.
+- [MIT](https://github.com/infinity-ooo/astro-theme-mia/blob/main/LICENSE)
