@@ -6,7 +6,7 @@ Mia is designed to be minimalist yet powerful, integrating the capabilities of A
 
 ![Mia Theme Preview](public/theme-preview.png)
 
-#### Get Started
+### Get Started
 
 Install the dependencies:
 
@@ -32,7 +32,25 @@ You will then see the `dist` folder generated for publishing, which you can prev
 npm run preview
 ```
 
-#### Theme Configuration
+### Using Rough Notation
+
+Mia is based on the [Rough Notation](https://roughnotation.com/) library. You can use `<Notation />` component in your MDX content, such as:
+
+```mdx
+In Swift, the `Codable` protocol is a type alias for the <Notation type="box" color="blue">`Encodable` and `Decodable`</Notation> protocols:
+```
+
+And following is the type of this component:
+
+```tsx
+type Props = {
+  type?: "underline" | "circle" | "crossed-off" | "highlight" | "strike-through" | "bracket";
+  color?: string;
+  strokeWidth?: number;
+};
+```
+
+### Theme Configuration
 
 Update the `src/config.ts` file to configure the theme:
 
@@ -44,7 +62,7 @@ Update the `src/config.ts` file to configure the theme:
 - `FOOTER_CONTENT`: the content of the footer
 - `GOOGLE_GTAG`: the Google Tag Manager ID
 
-#### Theme Integrations
+### Theme Integrations
 
 - @astrojs/mdx: https://docs.astro.build/en/guides/markdown-content/
 - @astrojs/rss: https://docs.astro.build/en/guides/rss/
@@ -52,6 +70,6 @@ Update the `src/config.ts` file to configure the theme:
 - @astrojs/tailwind: https://docs.astro.build/en/guides/integrations-guide/tailwind/
 - rough-notation: https://roughnotation.com/
 
-#### License
+### License
 
 - [MIT](https://github.com/infinity-ooo/astro-theme-mia/blob/main/LICENSE)

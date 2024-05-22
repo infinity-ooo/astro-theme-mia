@@ -6,7 +6,7 @@ Mia 旨在简约而强大，集成了 Astro、MDX 和 Rough Notation 的功能�
 
 ![Mia Theme Preview](public/theme-preview.png)
 
-#### 开始使用
+### 开始使用
 
 安装依赖：
 
@@ -32,7 +32,25 @@ npm run build
 npm run preview
 ```
 
-#### 主题配置
+### 在文章中使用 Rough Notation
+
+Mia 主题的亮点是基于 [Rough Notation](https://roughnotation.com/) 实现了手绘风格. 你可以在文章中使用 `<Notation />` 组件添加手绘效果，比如:
+
+```mdx
+In Swift, the `Codable` protocol is a type alias for the <Notation type="box" color="blue">`Encodable` and `Decodable`</Notation> protocols:
+```
+
+下面是这个组件的类型定义和可接受的参数:
+
+```tsx
+type Props = {
+  type?: "underline" | "circle" | "crossed-off" | "highlight" | "strike-through" | "bracket";
+  color?: string;
+  strokeWidth?: number;
+};
+```
+
+### 主题配置
 
 更新 `src/config.ts` 文件来配置主题：
 
@@ -44,7 +62,7 @@ npm run preview
 - `FOOTER_CONTENT`：页脚的内容
 - `GOOGLE_GTAG`：Google Tag Manager ID
 
-#### 主题集成
+### 主题集成
 
 - @astrojs/mdx: https://docs.astro.build/en/guides/markdown-content/
 - @astrojs/rss: https://docs.astro.build/en/guides/rss/
@@ -52,6 +70,6 @@ npm run preview
 - @astrojs/tailwind: https://docs.astro.build/en/guides/integrations-guide/tailwind/
 - rough-notation: https://roughnotation.com/
 
-#### 许可证
+### 许可证
 
 - [MIT](https://github.com/infinity-ooo/astro-theme-mia/blob/main/LICENSE)
