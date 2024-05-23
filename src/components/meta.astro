@@ -2,6 +2,7 @@
 import "katex/dist/katex.min.css";
 import "../styles/global.css";
 import { GOOGLE_GTAG } from "../config";
+import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
   title: string;
@@ -63,3 +64,5 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
+
+<ViewTransitions />
