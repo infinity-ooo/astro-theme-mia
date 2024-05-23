@@ -29,4 +29,4 @@ export const MENUS = [
 
 export const FOOTER_CONTENT = "Let's build a 1B unicorn 🦄";
 
-export const GOOGLE_GTAG = "G-ABCDEFGHIJ";
+export const GOOGLE_GTAG = "G-XXXXXXXXXX";
