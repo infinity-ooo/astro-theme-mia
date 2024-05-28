@@ -1,6 +1,6 @@
 # Mia - Astro & Tailwindcss & MDX Theme
 
-[English](README.md) | [中文](README_zh.md) | [Demo](https://miayv.com/posts/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%89%8D%E4%B8%80%E7%99%BE%E5%90%8D%E4%BB%98%E8%B4%B9%E7%94%A8%E6%88%B7/)
+[English](README.md) | [中文](README_zh.md) | [Demo](https://astro-theme-mia.pages.dev/)
 
 Mia is designed to be minimalist yet powerful, integrating the capabilities of Astro, MDX, and Rough Notation. Whether you're a developer, writer, or just someone who loves clean and efficient design, this theme is perfect for you.
 
