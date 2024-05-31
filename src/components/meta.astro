@@ -10,7 +10,6 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -25,7 +24,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={Astro.url.pathname} />
 
 <!-- Google tag (gtag.js) -->
 <script async is:inline src=`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_GTAG}`></script>
